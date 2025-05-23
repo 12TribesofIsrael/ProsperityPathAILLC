@@ -1,0 +1,50 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import Section from './Section';
+
+interface CtaSectionProps {
+  headline: string;
+  subtext: string;
+  ctaText: string;
+  ctaLink: string;
+  secondaryCtaText?: string;
+  secondaryCtaLink?: string;
+}
+
+const CtaSection: React.FC<CtaSectionProps> = ({
+  headline,
+  subtext,
+  ctaText,
+  ctaLink,
+  secondaryCtaText,
+  secondaryCtaLink,
+}) => {
+  return (
+    <Section bgColor="bg-gradient-to-r from-primary-500 to-royal-600" animation="fade-in">
+      <div className="text-center text-white py-8 max-w-3xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">{headline}</h2>
+        <p className="text-lg mb-8 text-white/80">{subtext}</p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link 
+            to={ctaLink}
+            className="btn-secondary flex items-center justify-center gap-2"
+          >
+            {ctaText}
+            <ArrowRight size={18} />
+          </Link>
+          {secondaryCtaText && secondaryCtaLink && (
+            <Link 
+              to={secondaryCtaLink}
+              className="btn-outline border-white text-white hover:bg-white/10"
+            >
+              {secondaryCtaText}
+            </Link>
+          )}
+        </div>
+      </div>
+    </Section>
+  );
+};
+
+export default CtaSection;

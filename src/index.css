@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl lg:text-5xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-tight;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl leading-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-sans font-medium rounded-md transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500;
+  }
+  
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-primary-500 text-primary-500 hover:bg-primary-50 focus:ring-primary-500;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .section-title {
+    @apply text-center mb-12;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition duration-300 hover:shadow-lg;
+  }
+  
+  .input {
+    @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+}
