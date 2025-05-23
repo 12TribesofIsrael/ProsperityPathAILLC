@@ -5,6 +5,7 @@ import SectionTitle from './SectionTitle';
 
 interface Problem {
   text: string;
+  image?: string;
 }
 
 interface SolutionPoint {
@@ -36,16 +37,27 @@ const ProblemSolutionSection: React.FC<ProblemSolutionSectionProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div className="bg-white p-8 rounded-lg shadow-md">
           <h3 className="text-xl font-semibold mb-6 text-gray-800">Common Challenges</h3>
-          <ul className="space-y-4">
+          <div className="space-y-8">
             {problems.map((problem, index) => (
-              <li key={index} className="flex items-start">
-                <span className="flex-shrink-0 p-1 rounded-full bg-red-100 mr-3 mt-1">
-                  <X size={16} className="text-red-500" />
-                </span>
-                <span>{problem.text}</span>
-              </li>
+              <div key={index} className="flex flex-col space-y-4">
+                {problem.image && (
+                  <div className="relative h-48 rounded-lg overflow-hidden">
+                    <img 
+                      src={problem.image} 
+                      alt="Financial Challenge" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <div className="flex items-start">
+                  <span className="flex-shrink-0 p-1 rounded-full bg-red-100 mr-3 mt-1">
+                    <X size={16} className="text-red-500" />
+                  </span>
+                  <span>{problem.text}</span>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
         
         {/* Solution */}
