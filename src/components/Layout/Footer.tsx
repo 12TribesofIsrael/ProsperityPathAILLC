@@ -5,6 +5,17 @@ import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react'
 const Footer: React.FC = () => {
   const basePath = import.meta.env.BASE_URL;
   
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToTestimonials = () => {
+    const testimonialsSection = document.getElementById('testimonials');
+    if (testimonialsSection) {
+      testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <footer className="bg-primary-900 text-white pt-16 pb-8">
       <div 
@@ -25,13 +36,31 @@ const Footer: React.FC = () => {
               Empowering God-fearing individuals and families to break free from financial struggle and build generational wealth through faith-aligned principles.
             </p>
             <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a 
+                href="https://www.facebook.com/aibiblegospels" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Follow us on Facebook"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a 
+                href="https://www.instagram.com/aibiblegospels/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Follow us on Instagram"
+              >
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+              <a 
+                href="https://x.com/aibiblegospels" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-white transition-colors"
+                aria-label="Follow us on Twitter/X"
+              >
                 <Twitter size={20} />
               </a>
             </div>
@@ -41,7 +70,11 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+                <Link 
+                  to="/" 
+                  onClick={scrollToTop}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
@@ -61,9 +94,12 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={scrollToTestimonials}
+                  className="text-gray-300 hover:text-white transition-colors text-left"
+                >
                   Testimonials
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -87,11 +123,11 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-300">
                 <Phone size={16} />
-                <span>(555) 123-4567</span>
+                <span>(302) 399-5038</span>
               </li>
               <li className="flex items-start space-x-3 text-gray-300">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
-                <span>123 Faith Road, Suite 100<br />Atlanta, GA 30303</span>
+                <span>1500 Chestnut St. Suite 2 #1785<br />Philadelphia, PA 19102</span>
               </li>
             </ul>
           </div>

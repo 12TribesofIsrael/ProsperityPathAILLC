@@ -21,6 +21,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   secondaryCtaText,
   secondaryCtaLink,
 }) => {
+  // Check if the link is external (starts with http/https) or internal
+  const isExternalLink = (url: string) => url.startsWith('http');
+  
   return (
     <section className="bg-gradient-to-r from-primary-900 to-royal-900 text-white pt-32 pb-20">
       <div className="container">
@@ -32,20 +35,47 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <p className="text-lg md:text-xl text-gray-200 max-w-lg">
               {subheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link to={ctaLink} className="btn-secondary flex items-center justify-center gap-2">
-                {ctaText}
-                <ArrowRight size={18} />
-              </Link>
-              {secondaryCtaText && secondaryCtaLink && (
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 relative z-10">
+              {/* Primary CTA Button */}
+              {isExternalLink(ctaLink) ? (
                 <a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+                  href={ctaLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline border-white text-white hover:bg-white/10"
+                  className="btn-secondary flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  {secondaryCtaText}
+                  {ctaText}
+                  <ArrowRight size={18} />
                 </a>
+              ) : (
+                <Link 
+                  to={ctaLink} 
+                  className="btn-secondary flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  {ctaText}
+                  <ArrowRight size={18} />
+                </Link>
+              )}
+              
+              {/* Secondary CTA Button */}
+              {secondaryCtaText && secondaryCtaLink && (
+                isExternalLink(secondaryCtaLink) ? (
+                  <a 
+                    href={secondaryCtaLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline border-white text-white hover:bg-white/10 cursor-pointer"
+                  >
+                    {secondaryCtaText}
+                  </a>
+                ) : (
+                  <Link 
+                    to={secondaryCtaLink}
+                    className="btn-outline border-white text-white hover:bg-white/10 cursor-pointer"
+                  >
+                    {secondaryCtaText}
+                  </Link>
+                )
               )}
             </div>
           </div>

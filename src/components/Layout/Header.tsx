@@ -11,6 +11,15 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ to, label, currentPath, onClick }) => {
   const isActive = currentPath === to;
+  
+  const handleClick = () => {
+    if (to === '/' && currentPath === '/') {
+      // If we're on the home page and clicking Home, scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    if (onClick) onClick();
+  };
+  
   return (
     <Link
       to={to}
@@ -19,7 +28,7 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label, currentPath, onClick }) =>
           ? 'text-secondary-500 font-semibold'
           : 'text-white hover:text-secondary-300'
       }`}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {label}
     </Link>
@@ -63,7 +72,15 @@ const Header: React.FC = () => {
         }}
       />
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link 
+          to="/" 
+          className="flex items-center space-x-2"
+          onClick={() => {
+            if (location.pathname === '/') {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
           <img 
             src={`${basePath}images/logo.png`} 
             alt="Prosperity Path AI Logo" 
@@ -103,7 +120,7 @@ const Header: React.FC = () => {
             <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
             <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-center text-sm py-2 mt-2 hover:bg-secondary-400"
