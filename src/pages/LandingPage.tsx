@@ -119,6 +119,8 @@ const LandingPage = () => {
         solutionTitle="Our Solution: Prosperity Path AI™—Where Faith Meets Financial Freedom"
         solutionDescription="Prosperity Path AI™ is the only system that combines Biblical principles with cutting-edge technology. Get step-by-step guidance, AI-powered tools, and a community of believers you can trust."
         solutionPoints={solutionPoints}
+        imageUrls={['/images/Are You Facing These Challenges3.png']}
+        solutionImageUrl={'/images/we can help.png'}
       />
 
       <ProcessSection
@@ -137,6 +139,7 @@ const LandingPage = () => {
         title="What Our Clients Say"
         subtitle="Real stories from people who have transformed their financial future"
         testimonials={testimonials}
+        youtubePlaylistUrl={'https://www.youtube.com/embed/videoseries?list=PLpCrgrQb5NWV8NiFLczaGwp4MDutjukcP'}
       />
 
       <FaqSection

@@ -15,12 +15,14 @@ interface TestimonialsSectionProps {
   title: string;
   subtitle?: string;
   testimonials: Testimonial[];
+  youtubePlaylistUrl?: string;
 }
 
 const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
   title,
   subtitle,
   testimonials,
+  youtubePlaylistUrl,
 }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -56,7 +58,7 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                 />
               </div>
             )}
-            <div>
+            <div className="flex-grow">
               <div className="flex items-center mb-2">
                 {[...Array(5)].map((_, i) => (
                   <Star 
@@ -66,10 +68,10 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
                   />
                 ))}
               </div>
-              <blockquote className="text-lg italic mb-4">"{testimonials[activeIndex].text}"</blockquote>
+              <blockquote className="text-lg italic mb-4 text-gray-700">"{testimonials[activeIndex].text}"</blockquote>
               <div>
-                <p className="font-semibold text-primary-500">{testimonials[activeIndex].name}</p>
-                <p className="text-sm text-gray-500">{testimonials[activeIndex].location}</p>
+                <p className="font-semibold text-primary-600">{testimonials[activeIndex].name}</p>
+                <p className="text-sm text-gray-600">{testimonials[activeIndex].location}</p>
               </div>
             </div>
           </div>
@@ -106,6 +108,23 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({
           )}
         </div>
       </div>
+
+      {youtubePlaylistUrl && (
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-6 text-center text-white">Watch Testimonials</h3>
+          <div className="relative aspect-video w-full rounded-lg shadow-xl overflow-hidden">
+            <iframe
+              src={youtubePlaylistUrl.replace('https://www.youtube.com/watch?v=', 'https://www.youtube.com/embed/videoseries?list=')}
+              title="YouTube Testimonial Playlist"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute top-0 left-0 w-full h-full"
+            ></iframe>
+          </div>
+        </div>
+      )}
     </Section>
   );
 };
