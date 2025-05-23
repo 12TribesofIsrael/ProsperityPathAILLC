@@ -57,9 +57,9 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/images/prosperity-path-ai-logo-circle.png" 
-            alt="Prosperity Path AI" 
-            className="h-16 w-16 object-contain"
+            src="/images/prosperity-path-ai-logo.png" 
+            alt="Prosperity Path AI Logo" 
+            className="h-16 w-auto object-contain"
           />
         </Link>
 

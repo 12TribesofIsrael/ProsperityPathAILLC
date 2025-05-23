@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <img 
-              src="/images/prosperity-path-ai-logo-circle.png" 
-              alt="Prosperity Path AI" 
-              className="h-16 w-16 object-contain"
+              src="/images/prosperity-path-ai-logo.png" 
+              alt="Prosperity Path AI Logo" 
+              className="h-16 w-auto object-contain"
             />
             <p className="text-gray-300">
               Empowering God-fearing individuals and families to break free from financial struggle and build generational wealth through faith-aligned principles.
