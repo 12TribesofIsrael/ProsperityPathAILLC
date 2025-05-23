@@ -114,7 +114,7 @@ const LandingPage = () => {
         subheadline="The only AI-powered system designed to help God-fearing individuals and families repair credit, access funding, and build generational wealth—with Biblical principles, real results, and zero risk."
         ctaText="Get Started Free"
         ctaLink="/opt-in"
-        imageSrc="/images/inheritance-quote.png"
+        imageSrc="/images/family-1.png"
         secondaryCtaText="Learn More"
         secondaryCtaLink="#how-it-works"
       />
