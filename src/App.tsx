@@ -13,7 +13,7 @@ import Layout from './components/Layout/Layout';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/ProsperityPathAILLC">
       <Routes>
         <Route path="/" element={<Layout><LandingPage /></Layout>} />
         <Route path="/opt-in" element={<Layout><LeadCapturePage /></Layout>} />
