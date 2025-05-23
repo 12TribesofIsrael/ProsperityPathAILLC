@@ -4,14 +4,20 @@ import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container">
+    <footer className="bg-primary-900 text-white pt-16 pb-8">
+      <div 
+        className="absolute inset-0 bg-cover bg-center opacity-10" 
+        style={{ 
+          backgroundImage: 'url(https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg)'
+        }}
+      />
+      <div className="container relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <img 
               src="/images/logo.png" 
               alt="Prosperity Path AI Logo" 
-              className="h-16 w-auto object-contain"
+              className="h-16 w-auto object-contain rounded-full bg-white/10 p-1"
             />
             <p className="text-gray-300">
               Empowering God-fearing individuals and families to break free from financial struggle and build generational wealth through faith-aligned principles.

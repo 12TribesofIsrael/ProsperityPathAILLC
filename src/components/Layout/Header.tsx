@@ -16,8 +16,8 @@ const NavLink: React.FC<NavLinkProps> = ({ to, label, currentPath, onClick }) =>
       to={to}
       className={`text-base font-medium transition-colors duration-200 ${
         isActive
-          ? 'text-primary-500 font-semibold'
-          : 'text-white hover:text-primary-200'
+          ? 'text-secondary-500 font-semibold'
+          : 'text-white hover:text-secondary-300'
       }`}
       onClick={onClick}
     >
@@ -49,17 +49,24 @@ const Header: React.FC = () => {
   };
 
   const headerClass = isScrolled 
-    ? 'bg-primary-900/95 backdrop-blur-sm shadow-md py-2 transition-all duration-300'
-    : 'bg-transparent py-4 transition-all duration-300';
+    ? 'bg-primary-900/95 backdrop-blur-sm shadow-lg py-2 transition-all duration-300'
+    : 'bg-primary-900/80 py-4 transition-all duration-300';
 
   return (
     <header className={`fixed w-full z-50 ${headerClass}`}>
+      <div 
+        className="absolute inset-0 bg-cover bg-center -z-10" 
+        style={{ 
+          backgroundImage: 'url(https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg)',
+          opacity: '0.2'
+        }}
+      />
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img 
             src="/images/logo.png" 
             alt="Prosperity Path AI Logo" 
-            className="h-16 w-auto object-contain"
+            className="h-16 w-auto object-contain rounded-full bg-white/10 p-1"
           />
         </Link>
 
@@ -70,7 +77,7 @@ const Header: React.FC = () => {
           <NavLink to="/opt-in" label="Get Started" currentPath={location.pathname} onClick={closeMenu} />
           <Link 
             to="/opt-in"
-            className="btn-secondary text-sm py-2"
+            className="btn-secondary text-sm py-2 hover:bg-secondary-400"
             onClick={closeMenu}
           >
             Get Started Free
@@ -79,7 +86,7 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white hover:text-primary-200 focus:outline-none"
+          className="md:hidden text-white hover:text-secondary-300 focus:outline-none"
           onClick={toggleMenu}
           aria-label={isMenuOpen ? 'Close Menu' : 'Open Menu'}
         >
@@ -96,7 +103,7 @@ const Header: React.FC = () => {
             <NavLink to="/opt-in" label="Get Started" currentPath={location.pathname} onClick={closeMenu} />
             <Link 
               to="/opt-in"
-              className="btn-secondary text-center text-sm py-2 mt-2"
+              className="btn-secondary text-center text-sm py-2 mt-2 hover:bg-secondary-400"
               onClick={closeMenu}
             >
               Get Started Free
