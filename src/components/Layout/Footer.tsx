@@ -49,9 +49,14 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/opt-in" className="text-gray-300 hover:text-white transition-colors">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Get Started
-                </Link>
+                </a>
               </li>
               <li>
                 <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">

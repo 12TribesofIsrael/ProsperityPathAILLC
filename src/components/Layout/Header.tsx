@@ -74,14 +74,15 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex space-x-8">
           <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
           <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
-          <NavLink to="/opt-in" label="Get Started" currentPath={location.pathname} onClick={closeMenu} />
-          <Link 
-            to="/opt-in"
+          <a 
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-secondary text-sm py-2 hover:bg-secondary-400"
             onClick={closeMenu}
           >
             Get Started Free
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -100,14 +101,15 @@ const Header: React.FC = () => {
           <nav className="container mx-auto px-4 py-6 flex flex-col space-y-4">
             <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
             <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
-            <NavLink to="/opt-in" label="Get Started" currentPath={location.pathname} onClick={closeMenu} />
-            <Link 
-              to="/opt-in"
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-secondary text-center text-sm py-2 mt-2 hover:bg-secondary-400"
               onClick={closeMenu}
             >
               Get Started Free
-            </Link>
+            </a>
           </nav>
         </div>
       )}

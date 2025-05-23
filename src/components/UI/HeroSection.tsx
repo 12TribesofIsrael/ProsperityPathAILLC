@@ -38,9 +38,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <ArrowRight size={18} />
               </Link>
               {secondaryCtaText && secondaryCtaLink && (
-                <Link to={secondaryCtaLink} className="btn-outline border-white text-white hover:bg-white/10">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline border-white text-white hover:bg-white/10"
+                >
                   {secondaryCtaText}
-                </Link>
+                </a>
               )}
             </div>
           </div>
