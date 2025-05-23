@@ -3,21 +3,21 @@ export const testimonials = [
     name: "Aisha J.",
     location: "Philadelphia",
     text: "I never thought I'd buy a home with my credit—Tommy's system got us to 720 in four months. We're now homeowners and building equity!",
-    image: "https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg",
+    image: "https://images.pexels.com/photos/7516509/pexels-photo-7516509.jpeg",
     rating: 5
   },
   {
     name: "Marcus D.",
     location: "Atlanta",
     text: "I'd been scammed before, but this restored my faith—and my finances. My business is funded with $75K and I'm scaling operations!",
-    image: "https://images.pexels.com/photos/3785104/pexels-photo-3785104.jpeg",
+    image: "https://images.pexels.com/photos/8067767/pexels-photo-8067767.jpeg",
     rating: 5
   },
   {
     name: "Simone W.",
     location: "Houston",
     text: "The AI made it so easy. I went from overwhelmed to organized in weeks. Now my son's future is secure and we're investing in property!",
-    image: "https://images.pexels.com/photos/3775131/pexels-photo-3775131.jpeg",
+    image: "https://images.pexels.com/photos/7516489/pexels-photo-7516489.jpeg",
     rating: 5
   }
 ];

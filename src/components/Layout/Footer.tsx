@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <img 
-              src="/images/prosperity-path-ai-logo.png" 
+              src="/prosperity-path-ai-logo.png" 
               alt="Prosperity Path AI Logo" 
               className="h-16 w-auto object-contain"
             />

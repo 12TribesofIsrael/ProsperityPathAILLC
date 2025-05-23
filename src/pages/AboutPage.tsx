@@ -22,7 +22,7 @@ const AboutPage = () => {
         <AboutSection
           title=""
           founderName="Tommy Lee, Founder & Chief Visionary"
-          founderImage="https://images.pexels.com/photos/8867482/pexels-photo-8867482.jpeg"
+          founderImage="https://images.pexels.com/photos/5989925/pexels-photo-5989925.jpeg"
           description={[
             "Tommy Lee, Founder and Chief Visionary of Prosperity Path AI LLC, is a covenant-bound brother with over two decades of mastery in Information Technology, Network Engineering, and AI-driven innovation. Rooted in the law, statutes, and commandments of the Most High, Tommy walks with fringes and foresight—fusing the ancient paths with modern power.",
             "As a Cisco-certified technician with plans to attain advanced CCNP and Cybersecurity credentials, he has guided enterprise-level projects in LAN/WAN architecture, infrastructure fortification, and intelligent automation. But more than just technical prowess, Tommy's calling is prophetic—transforming the economic mindset of his people through credit restoration, business funding strategies, and AI systems that break generational curses.",
