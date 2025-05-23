@@ -41,7 +41,7 @@ const ProblemSolutionSection: React.FC<ProblemSolutionSectionProps> = ({
             {problems.map((problem, index) => (
               <div key={index} className="flex flex-col space-y-4">
                 {problem.image && (
-                  <div className="relative h-48 rounded-lg overflow-hidden">
+                  <div className="relative h-64 rounded-lg overflow-hidden">
                     <img 
                       src={problem.image} 
                       alt="Financial Challenge" 
@@ -53,7 +53,7 @@ const ProblemSolutionSection: React.FC<ProblemSolutionSectionProps> = ({
                   <span className="flex-shrink-0 p-1 rounded-full bg-red-100 mr-3 mt-1">
                     <X size={16} className="text-red-500" />
                   </span>
-                  <span>{problem.text}</span>
+                  <span className="text-lg">{problem.text}</span>
                 </div>
               </div>
             ))}
