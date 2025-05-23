@@ -51,11 +51,21 @@ const AboutPage = () => {
       </Section>
       
       <Section bgColor="bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <SectionTitle 
             title="Our Vision & Mission"
             subtitle="Prosperity Path AI LLC is more than a business—it's a movement"
           />
+          
+          {/* Inheritance Quote Image */}
+          <div className="mb-12 text-center">
+            <img 
+              src={`${basePath}images/inheritance-quote.png`}
+              alt="A good man leaveth an inheritance to his children's children - Proverbs 13:22"
+              className="max-w-full h-auto mx-auto rounded-lg shadow-lg"
+              loading="lazy"
+            />
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="card">

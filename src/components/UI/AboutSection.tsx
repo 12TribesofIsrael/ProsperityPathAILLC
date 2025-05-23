@@ -1,6 +1,4 @@
 import React from 'react';
-import Section from './Section';
-import SectionTitle from './SectionTitle';
 
 interface DescriptionItemText { type: 'text'; content: string; }
 interface DescriptionItemImage { type: 'image'; url: string; alt?: string; }
@@ -28,46 +26,24 @@ const AboutSection: React.FC<AboutSectionProps> = ({
   stats,
 }) => {
   return (
-    <Section bgColor="bg-white" animation="slide-up">
-      <SectionTitle 
-        title={title} 
-        subtitle={subtitle}
-      />
-      
-      <div className="grid grid-cols-1 gap-12 items-center mx-auto max-w-4xl">
-        {/* Removed separate image display */}
-        {/* {founderImages && founderImages.length > 0 && (
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-4">
-             {founderImages.map((imageUrl, index) => (
-               <div key={index} className="relative">
-                 <div className="absolute inset-0 bg-primary-200 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
-                 <img 
-                   src={imageUrl}
-                   alt={`${founderName} ${index + 1}`}
-                   className="rounded-lg shadow-lg w-full object-cover"
-                 />
-               </div>
-             ))}
-          </div>
-        )} */}
-        
-        <div className="mx-auto max-w-prose">
-          <h3 className="text-2xl font-semibold mb-4 text-primary-600">{founderName}</h3>
+    <div className="py-16 md:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-3xl font-bold mb-8 text-primary-600 text-center">{founderName}</h3>
           
-          <div className="space-y-4">
-            {/* Updated to map over DescriptionItem */}
+          <div className="space-y-6">
             {description.map((item, index) => (
               <React.Fragment key={index}>
                 {item.type === 'text' && (
-                  <p className="text-gray-700 leading-relaxed">{item.content}</p>
+                  <p className="text-gray-700 leading-relaxed text-lg">{item.content}</p>
                 )}
                 {item.type === 'image' && (
-                  <div className="my-8">
-                    <div className="relative max-w-lg mx-auto">
+                  <div className="my-12">
+                    <div className="max-w-2xl mx-auto">
                        <img 
                          src={item.url}
                          alt={item.alt || `Image related to ${founderName}`}
-                         className="rounded-lg shadow-lg w-full object-cover"
+                         className="rounded-lg shadow-xl w-full object-cover"
                          loading="lazy"
                        />
                     </div>
@@ -78,18 +54,20 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           </div>
           
           {stats && stats.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-gray-200">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-primary-50 rounded-lg border border-primary-100">
-                  <p className="text-2xl font-bold text-primary-600">{stat.value}</p>
-                  <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
-                </div>
-              ))}
+            <div className="mt-16 pt-12 border-t-2 border-primary-100">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center p-6 bg-gradient-to-br from-primary-50 to-primary-100 rounded-xl border border-primary-200 shadow-md">
+                    <p className="text-3xl font-bold text-primary-600 mb-2">{stat.value}</p>
+                    <p className="text-sm text-gray-700 font-semibold uppercase tracking-wide">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>
       </div>
-    </Section>
+    </div>
   );
 };
 
