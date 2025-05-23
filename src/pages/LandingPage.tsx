@@ -17,14 +17,8 @@ import { faqs } from '../data/faqs';
 
 const LandingPage = () => {
   const problems = [
-    { 
-      text: "Living paycheck-to-paycheck with no clear path to prosperity",
-      image: "/images/family-1.png"
-    },
-    { 
-      text: "Bad credit keeping you from fulfilling your divine purpose",
-      image: "/images/family-2.png"
-    },
+    { text: "Living paycheck-to-paycheck with no clear path to prosperity" },
+    { text: "Bad credit keeping you from fulfilling your divine purpose" },
     { text: "Financial jargon and worldly solutions that lack spiritual alignment" },
     { text: "Past failed attempts to fix credit or build wealth" },
     { text: "Wanting to honor God with your finances but not knowing where to start" }
