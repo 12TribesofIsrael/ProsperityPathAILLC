@@ -19,11 +19,11 @@ const LandingPage = () => {
   const problems = [
     { 
       text: "Living paycheck-to-paycheck with no clear path to prosperity",
-      image: "/images/family-1.png"
+      image: "/images/Are You Facing These Challenges1.png"
     },
     { 
       text: "Bad credit keeping you from fulfilling your divine purpose",
-      image: "/images/family-2.png"
+      image: "/images/Are You Facing These Challenges3.png"
     },
     { text: "Financial jargon and worldly solutions that lack spiritual alignment" },
     { text: "Past failed attempts to fix credit or build wealth" },
@@ -114,7 +114,7 @@ const LandingPage = () => {
         subheadline="The only AI-powered system designed to help God-fearing individuals and families repair credit, access funding, and build generational wealth—with Biblical principles, real results, and zero risk."
         ctaText="Get Started Free"
         ctaLink="/opt-in"
-        imageSrc="/images/family-1.png"
+        imageSrc="/images/inheritance-quote.png"
         secondaryCtaText="Learn More"
         secondaryCtaLink="#how-it-works"
       />
