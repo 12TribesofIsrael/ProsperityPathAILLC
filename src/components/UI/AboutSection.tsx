@@ -59,16 +59,16 @@ const AboutSection: React.FC<AboutSectionProps> = ({
             {description.map((item, index) => (
               <React.Fragment key={index}>
                 {item.type === 'text' && (
-                  <p className="text-gray-700">{item.content}</p>
+                  <p className="text-gray-700 leading-relaxed">{item.content}</p>
                 )}
                 {item.type === 'image' && (
                   <div className="my-8">
-                    <div className="relative">
-                       <div className="absolute inset-0 bg-primary-200 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
+                    <div className="relative max-w-lg mx-auto">
                        <img 
                          src={item.url}
                          alt={item.alt || `Image related to ${founderName}`}
                          className="rounded-lg shadow-lg w-full object-cover"
+                         loading="lazy"
                        />
                     </div>
                   </div>
@@ -78,11 +78,11 @@ const AboutSection: React.FC<AboutSectionProps> = ({
           </div>
           
           {stats && stats.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-12 pt-8 border-t border-gray-200">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                  <p className="text-2xl font-bold text-primary-500">{stat.value}</p>
-                  <p className="text-sm text-gray-600">{stat.label}</p>
+                <div key={index} className="text-center p-4 bg-primary-50 rounded-lg border border-primary-100">
+                  <p className="text-2xl font-bold text-primary-600">{stat.value}</p>
+                  <p className="text-sm text-gray-600 font-medium">{stat.label}</p>
                 </div>
               ))}
             </div>

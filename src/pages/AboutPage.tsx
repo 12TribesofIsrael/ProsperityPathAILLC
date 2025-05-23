@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,7 +10,14 @@ import CtaSection from '../components/UI/CtaSection';
 
 import { testimonials } from '../data/testimonials';
 
-const AboutPage = () => {  const basePath = import.meta.env.BASE_URL;
+const AboutPage = () => {
+  const basePath = import.meta.env.BASE_URL;
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="pt-24">
       <Section bgColor="bg-gray-50">

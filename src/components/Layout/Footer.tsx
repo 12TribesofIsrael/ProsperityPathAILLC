@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
-const Footer: React.FC = () => {  const basePath = import.meta.env.BASE_URL;
+const Footer: React.FC = () => {
+  const basePath = import.meta.env.BASE_URL;
+  
   return (
     <footer className="bg-primary-900 text-white pt-16 pb-8">
       <div 
@@ -15,7 +17,7 @@ const Footer: React.FC = () => {  const basePath = import.meta.env.BASE_URL;
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <img 
-              src="./images/logo.png" 
+              src={`${basePath}images/logo.png`} 
               alt="Prosperity Path AI Logo" 
               className="h-16 w-auto object-contain rounded-full bg-white/10 p-1"
             />
