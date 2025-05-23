@@ -19,11 +19,11 @@ const LandingPage = () => {
   const problems = [
     { 
       text: "Living paycheck-to-paycheck with no clear path to prosperity",
-      image: "https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg"
+      image: "/images/family-1.png"
     },
     { 
       text: "Bad credit keeping you from fulfilling your divine purpose",
-      image: "https://images.pexels.com/photos/3943715/pexels-photo-3943715.jpeg"
+      image: "/images/family-2.png"
     },
     { text: "Financial jargon and worldly solutions that lack spiritual alignment" },
     { text: "Past failed attempts to fix credit or build wealth" },
