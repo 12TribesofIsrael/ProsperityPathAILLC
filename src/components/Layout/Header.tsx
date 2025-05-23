@@ -30,6 +30,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const basePath = import.meta.env.BASE_URL;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +65,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <img 
-            src="/images/logo.png" 
+            src={`${basePath}images/logo.png`} 
             alt="Prosperity Path AI Logo" 
             className="h-16 w-auto object-contain rounded-full bg-white/10 p-1"
           />

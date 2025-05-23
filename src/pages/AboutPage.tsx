@@ -10,7 +10,7 @@ import CtaSection from '../components/UI/CtaSection';
 
 import { testimonials } from '../data/testimonials';
 
-const AboutPage = () => {
+const AboutPage = () => {  const basePath = import.meta.env.BASE_URL;
   return (
     <div className="pt-24">
       <Section bgColor="bg-gray-50">
@@ -25,11 +25,11 @@ const AboutPage = () => {
           description={[
             { type: 'text', content: `Tommy Lee, Founder and Chief Visionary of Prosperity Path AI LLC, is a covenant-bound servant of the Most High, walking in truth, fringes, and faith. With over two decades of mastery in Information Technology, Network Engineering, and AI innovation, Tommy blends ancient wisdom with cutting-edge systems to build a platform rooted in righteousness, resilience, and elevation.` },
             { type: 'text', content: `He keeps the Most High first in all things—acknowledging that without the Creator, there is no prosperity. At Prosperity Path, everything flows through the laws, statutes, and commandments. We live by the divine principle: love the Most High with all your heart, mind, and soul—and treat your brother as yourself (Matthew 22:37–40).` },
-            { type: 'image', url: '/images/Family.jpg', alt: 'Tommy Lee Family' },
+            { type: 'image', url: `${basePath}images/Family.jpg`, alt: 'Tommy Lee Family' },
             { type: 'text', content: `Blessed with a beautiful family, Tommy has been married for over 15 years and is the proud father of three wonderful children, all gifts from the Most High. This family foundation serves as both his inspiration and his greatest motivation to build lasting generational wealth and wisdom.` },
             { type: 'text', content: `Raised in the struggle on Lehigh Avenue in North Philly, Tommy knows what it means to go without. From boiling water on a kerosene heater to being teased for hand-me-down clothes, he lived the hardship firsthand. "Bro, you smell like kerosene—I hope your kids never have to live like this," a friend once told him. That memory still fuels his mission.` },
             { type: 'text', content: `Surrounded by poverty, Tommy once turned to street life to survive, hustling not to glorify crime—but to stay afloat. Yet even then, he rejected the destructive mindset that so many adopted. A tragic loss of a close associate marked the beginning of his transformation. He chose a different path.` },
-            { type: 'image', url: '/images/family 2.jpg', alt: 'Tommy Lee with family and team' },
+            { type: 'image', url: `${basePath}images/family 2.jpg`, alt: 'Tommy Lee with family and team' },
             { type: 'text', content: `Tommy rose to become a Level 3 Engineer—often the only Israelite in the room. After facing unjust termination and being paid to stay silent, he realized: we can't win playing someone else's game. That revelation sparked his deep dive into economics, credit systems, and the world of automation. He invested over six figures into financial education, uncovering how the wealthy truly build and preserve wealth.` },
             { type: 'text', content: `And the results? Life-changing. Through this wisdom, Tommy restored his own credit, rebuilt his wife's and daughters' scores, and together they secured their dream home. That moment proved: once you learn this, no one can ever take it from you.` },
             { type: 'text', content: `Today, he leads Prosperity Path AI LLC with the same fire—to equip others with the blueprint. From AI-driven business automation to funding strategies and credit mastery, his mission is simple: awaken, build, and empower.` },

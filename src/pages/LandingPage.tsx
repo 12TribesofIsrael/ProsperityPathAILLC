@@ -16,6 +16,8 @@ import { testimonials } from '../data/testimonials';
 import { faqs } from '../data/faqs';
 
 const LandingPage = () => {
+  const basePath = import.meta.env.BASE_URL;
+  
   const problems = [
     { text: "Living paycheck-to-paycheck with no clear path to prosperity" },
     { text: "Bad credit keeping you from fulfilling your divine purpose" },
@@ -108,7 +110,7 @@ const LandingPage = () => {
         subheadline="The only AI-powered system designed to help God-fearing individuals and families repair credit, access funding, and build generational wealth—with Biblical principles, real results, and zero risk."
         ctaText="Get Started Free"
         ctaLink="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
-        imageSrc="/images/family-1.png"
+        imageSrc={`${basePath}images/family-1.png`}
         secondaryCtaText="Learn More"
         secondaryCtaLink="#how-it-works"
       />
@@ -119,8 +121,8 @@ const LandingPage = () => {
         solutionTitle="Our Solution: Prosperity Path AI™—Where Faith Meets Financial Freedom"
         solutionDescription="Prosperity Path AI™ is the only system that combines Biblical principles with cutting-edge technology. Get step-by-step guidance, AI-powered tools, and a community of believers you can trust."
         solutionPoints={solutionPoints}
-        imageUrls={['/images/Are You Facing These Challenges3.png']}
-        solutionImageUrl={'/images/we can help.png'}
+        imageUrls={[`${basePath}images/Are You Facing These Challenges3.png`]}
+        solutionImageUrl={`${basePath}images/we can help.png`}
       />
 
       <ProcessSection
