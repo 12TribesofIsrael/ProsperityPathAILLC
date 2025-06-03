@@ -93,9 +93,7 @@ const Header: React.FC = () => {
           <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
           <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#get-started"
             className="btn-secondary text-sm py-2 hover:bg-secondary-400"
             onClick={closeMenu}
           >
@@ -120,9 +118,7 @@ const Header: React.FC = () => {
             <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
             <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
             <a 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#get-started"
               className="btn-secondary text-center text-sm py-2 mt-2 hover:bg-secondary-400"
               onClick={closeMenu}
             >

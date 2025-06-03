@@ -109,7 +109,7 @@ const LandingPage = () => {
         headline="Unlock Financial Freedom Through Faith-Aligned Principles and Modern Technology"
         subheadline="The only AI-powered system designed to help God-fearing individuals and families repair credit, access funding, and build generational wealth—with Biblical principles, real results, and zero risk."
         ctaText="Get Started Free"
-        ctaLink="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+        ctaLink="#get-started"
         imageSrc={`${basePath}images/family-1.png`}
         secondaryCtaText="Learn More"
         secondaryCtaLink="/about"
@@ -154,7 +154,7 @@ const LandingPage = () => {
         headline="Ready to Transform Your Future?"
         subtext="Take the first step towards financial freedom—join Prosperity Path AI™ now."
         ctaText="Get Started Now"
-        ctaLink="https://docs.google.com/forms/d/e/1FAIpQLSfX8sIUZH4pMfA_IqGxMe1y1LeV_YOst7g5BaUZsyqmq2Bnsg/viewform?usp=sharing&ouid=101930591436574080353"
+        ctaLink="#get-started"
         secondaryCtaText="Speak with an Expert"
         secondaryCtaLink="/about"
       />
