@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -21,8 +21,34 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   secondaryCtaText,
   secondaryCtaLink,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  
   // Check if the link is external (starts with http/https) or internal
   const isExternalLink = (url: string) => url.startsWith('http');
+  
+  const handleCtaClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (ctaLink.startsWith('#')) {
+      const sectionId = ctaLink.replace('#', '');
+      if (location.pathname === '/') {
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 50);
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.getElementById(sectionId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 400);
+      }
+    } else if (isExternalLink(ctaLink)) {
+      window.open(ctaLink, '_blank', 'noopener,noreferrer');
+    } else {
+      navigate(ctaLink);
+    }
+  };
   
   return (
     <section className="bg-gradient-to-r from-primary-900 to-royal-900 text-white pt-32 pb-20">
@@ -37,25 +63,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4 relative z-10">
               {/* Primary CTA Button */}
-              {isExternalLink(ctaLink) ? (
-                <a 
-                  href={ctaLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  {ctaText}
-                  <ArrowRight size={18} />
-                </a>
-              ) : (
-                <Link 
-                  to={ctaLink} 
-                  className="btn-secondary flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  {ctaText}
-                  <ArrowRight size={18} />
-                </Link>
-              )}
+              <button
+                className="btn-secondary flex items-center justify-center gap-2 cursor-pointer"
+                onClick={handleCtaClick}
+              >
+                {ctaText}
+                <ArrowRight size={18} />
+              </button>
               
               {/* Secondary CTA Button */}
               {secondaryCtaText && secondaryCtaLink && (

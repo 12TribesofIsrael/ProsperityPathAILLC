@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 interface NavLinkProps {
@@ -39,6 +39,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const basePath = import.meta.env.BASE_URL;
 
   useEffect(() => {
@@ -56,6 +57,23 @@ const Header: React.FC = () => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleGetStartedClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    closeMenu();
+    if (location.pathname === '/') {
+      setTimeout(() => {
+        const el = document.getElementById('get-started');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 50);
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById('get-started');
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 400);
+    }
   };
 
   const headerClass = isScrolled 
@@ -92,13 +110,12 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex space-x-8">
           <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
           <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
-          <a 
-            href="#get-started"
+          <button 
+            onClick={handleGetStartedClick}
             className="btn-secondary text-sm py-2 hover:bg-secondary-400"
-            onClick={closeMenu}
           >
             Get Started Free
-          </a>
+          </button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -117,13 +134,12 @@ const Header: React.FC = () => {
           <nav className="container mx-auto px-4 py-6 flex flex-col space-y-4">
             <NavLink to="/" label="Home" currentPath={location.pathname} onClick={closeMenu} />
             <NavLink to="/about" label="About" currentPath={location.pathname} onClick={closeMenu} />
-            <a 
-              href="#get-started"
+            <button 
+              onClick={handleGetStartedClick}
               className="btn-secondary text-center text-sm py-2 mt-2 hover:bg-secondary-400"
-              onClick={closeMenu}
             >
               Get Started Free
-            </a>
+            </button>
           </nav>
         </div>
       )}
