@@ -83,7 +83,7 @@ src/
 
 ## Contact
 
-- Website: [Prosperity Path AI](https://prosperitypathai.com)
+- Website: [Prosperity Path AI](https://theprosperitypathai.com/)
 - Email: info@prosperitypathai.com
 - Location: Atlanta, GA
 
